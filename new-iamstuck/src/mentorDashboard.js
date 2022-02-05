@@ -1,8 +1,30 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import App from "./App";
+import {Fragment} from 'react'
+import {Disclosure, Menu, Transition} from '@headlessui/react'
+import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
+import {MailIcon, PhoneIcon} from '@heroicons/react/solid'
+
+const people = [
+    {
+        name: 'What is 3x+4?',
+        title: 'Jane Cooper',
+        role: 'Maths',
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+        name: 'How long is a piece of string?',
+        title: 'Jane Cooper',
+        role: 'Physics',
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    // More people...
+]
 
 const user = {
     name: 'Tom Cook',
@@ -11,13 +33,13 @@ const user = {
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-    { name: 'Mentee', href: '/', current: false },
-    { name: 'Mentor', href: '/mentor', current: true },
+    {name: 'Mentee', href: '/', current: false},
+    {name: 'Mentor', href: '/mentor', current: true},
 ]
 const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
+    {name: 'Your Profile', href: '#'},
+    {name: 'Settings', href: '#'},
+    {name: 'Sign out', href: '#'},
 ]
 
 function classNames(...classes) {
@@ -29,7 +51,7 @@ export default function MentorDashboard() {
         <>
             <div className="min-h-full">
                 <Disclosure as="nav" className="bg-gray-800">
-                    {({ open }) => (
+                    {({open}) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex items-center justify-between h-16">
@@ -68,15 +90,17 @@ export default function MentorDashboard() {
                                                 className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                             >
                                                 <span className="sr-only">View notifications</span>
-                                                <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                                <BellIcon className="h-6 w-6" aria-hidden="true"/>
                                             </button>
 
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="ml-3 relative">
                                                 <div>
-                                                    <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                    <Menu.Button
+                                                        className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                         <span className="sr-only">Open user menu</span>
-                                                        <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                                                        <img className="h-8 w-8 rounded-full" src={user.imageUrl}
+                                                             alt=""/>
                                                     </Menu.Button>
                                                 </div>
                                                 <Transition
@@ -88,10 +112,11 @@ export default function MentorDashboard() {
                                                     leaveFrom="transform opacity-100 scale-100"
                                                     leaveTo="transform opacity-0 scale-95"
                                                 >
-                                                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                    <Menu.Items
+                                                        className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                         {userNavigation.map((item) => (
                                                             <Menu.Item key={item.name}>
-                                                                {({ active }) => (
+                                                                {({active}) => (
                                                                     <a
                                                                         href={item.href}
                                                                         className={classNames(
@@ -111,12 +136,13 @@ export default function MentorDashboard() {
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
                                         {/* Mobile menu button */}
-                                        <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <Disclosure.Button
+                                            className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open main menu</span>
                                             {open ? (
-                                                <XIcon className="block h-6 w-6" aria-hidden="true" />
+                                                <XIcon className="block h-6 w-6" aria-hidden="true"/>
                                             ) : (
-                                                <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                                                <MenuIcon className="block h-6 w-6" aria-hidden="true"/>
                                             )}
                                         </Disclosure.Button>
                                     </div>
@@ -143,18 +169,20 @@ export default function MentorDashboard() {
                                 <div className="pt-4 pb-3 border-t border-gray-700">
                                     <div className="flex items-center px-5">
                                         <div className="flex-shrink-0">
-                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt=""/>
                                         </div>
                                         <div className="ml-3">
-                                            <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                                            <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                                            <div
+                                                className="text-base font-medium leading-none text-white">{user.name}</div>
+                                            <div
+                                                className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                                         </div>
                                         <button
                                             type="button"
                                             className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                         >
                                             <span className="sr-only">View notifications</span>
-                                            <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                            <BellIcon className="h-6 w-6" aria-hidden="true"/>
                                         </button>
                                     </div>
                                     <div className="mt-3 px-2 space-y-1">
@@ -181,13 +209,58 @@ export default function MentorDashboard() {
                     </div>
                 </header>
                 <main>
-                    <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                        {App()}
-
+                    <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+                        {/* Start replace */}
+                        {RequestsList()}
                         {/* /End replace */}
                     </div>
                 </main>
             </div>
         </>
+    )
+}
+
+function RequestsList() {
+    return (
+        <ul className="grid grid-cols-1 gap-6 ">
+            {people.map((person) => (
+                <li key={person.email} className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+                    <div className="w-full flex items-center justify-between p-6 space-x-6">
+                        <div className="flex-1 truncate">
+                            <div className="flex items-center space-x-3">
+                                <h3 className="text-gray-900 text-sm font-medium truncate">{person.name}</h3>
+                                <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
+                                  {person.role}
+                                </span>
+                            </div>
+                            <p className="mt-1 text-gray-500 text-sm truncate">{person.title}</p>
+                        </div>
+                        <img className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src={person.imageUrl} alt=""/>
+                    </div>
+                    <div>
+                        <div className="-mt-px flex divide-x divide-gray-200">
+                            <div className="w-0 flex-1 flex">
+                                <a
+                                    href={`mailto:${person.email}`}
+                                    className="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
+                                >
+                                    <MailIcon className="w-5 h-5 text-gray-400" aria-hidden="true"/>
+                                    <span className="ml-3">Dismiss</span>
+                                </a>
+                            </div>
+                            <div className="-ml-px w-0 flex-1 flex">
+                                <a
+                                    href={`tel:${person.telephone}`}
+                                    className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500"
+                                >
+                                    <PhoneIcon className="w-5 h-5 text-gray-400" aria-hidden="true"/>
+                                    <span className="ml-3">Accept</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            ))}
+        </ul>
     )
 }
