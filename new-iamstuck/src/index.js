@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from "react-dom";
 import {
     BrowserRouter,
     Routes,
@@ -10,6 +9,7 @@ import {
 import './index_compiled.css';
 import reportWebVitals from './reportWebVitals';
 import MentorDashboard from "./mentorDashboard";
+import UserDashboard from "./UserDashboard";
 
 const rootElement = document.getElementById("root");
 
@@ -19,6 +19,7 @@ ReactDOM.render(
           <Routes>
               <Route path="/" element={<h2>Hello</h2>} />
               <Route path="mentor" element={<MentorDashboard />} />
+              <Route path="user" element={<UserDashboard />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,
