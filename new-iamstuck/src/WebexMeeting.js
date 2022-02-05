@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import {WebexMeetingWidget} from '@webex/widgets';
+import {WebexMeetingsWidget} from '@webex/widgets';
 
-import '@webex/widgets/dist/webexWidgets.css';
+import '@webex/widgets/dist/css/webex-widgets.css';
 import './WebexMeeting.css';
 
 function WebexMeeting({webexToken}) {
   return (
     <div className="WebexMeeting">
-        <WebexMeetingWidget
+        <WebexMeetingsWidget
             accessToken={webexToken}
             meetingDestination={"thematthewpull@meet167.calls.webex.com"}
         />
