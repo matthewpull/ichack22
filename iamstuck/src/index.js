@@ -11,14 +11,16 @@ import {
 import MenteeDashboard from "./menteeDashboard";
 import MentorDashboard from "./mentorDashboard";
 
+import WebexMeetingsWidget from './packages/@webex/widget-meetings/src/components/MeetingsWidget';
+
+function onClick() {
+    // eslint-disable-next-line no-alert
+    window.alert('onClick');
+  }
+
 const rootElement = document.getElementById("root");
 render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<MenteeDashboard />} />
-            <Route path="mentor" element={<MentorDashboard />} />
-        </Routes>
-    </BrowserRouter>,
+    <WebexMeetingsWidget accessToken="ABC123" meetingDestination="abc" onJoinClick={onClick} onLeaveClick={onClick}/>,
     rootElement
 );
 
