@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#$bdff8wo2^q@w3l@98hl(yit)+9dnfvbdw^-q+!y4#p8t%z4l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'helpers',
+    'questions',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +79,7 @@ WSGI_APPLICATION = 'ichack22.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ichack22',
         'ATOMIC_REQUESTS': True,
     }
 }

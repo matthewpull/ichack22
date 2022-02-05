@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from helpers.views import HelperViewSet
+from questions.views import QuestionViewSet, ReplyViewSet, CallViewSet
+from rest_framework import routers
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+router = routers.SimpleRouter()
+router.register(r'helpers', HelperViewSet)
+router.register(r'questions', QuestionViewSet)
+router.register(r'replies', ReplyViewSet)
+router.register(r'calls', CallViewSet)
+urlpatterns += router.urls

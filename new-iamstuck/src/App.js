@@ -18,7 +18,7 @@ function App() {
             <WebexMeeting webexToken={webexToken} />
           ) : 
           (
-            <Auth 
+            <Auth
               clientID={process.env.REACT_APP_WEBEX_CLIENT_ID} 
               loginText="Login to Webex"
               redirectURI={redirectURI}
