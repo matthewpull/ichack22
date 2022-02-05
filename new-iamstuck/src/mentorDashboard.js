@@ -67,9 +67,9 @@ function classNames(...classes) {
 export default function MentorDashboard() {
     return (
         <>
-            <div className="min-h-full">
-                <Disclosure as="nav" className="bg-gray-800">
-                    {({open}) => (
+            <div className="h-full w-full flex flex-col">
+                <Disclosure as="nav" className="bg-gray-800 flex-shrink-0">
+                    {({ open }) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex items-center justify-between h-16">
@@ -221,7 +221,7 @@ export default function MentorDashboard() {
                     )}
                 </Disclosure>
 
-                <header className="bg-white shadow">
+                <header className="bg-white shadow flex-shrink-0">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
                     </div>
