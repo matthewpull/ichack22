@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 function OAuthLink({clientID, loginText, redirectURI, webexAPIBaseURL}) {
   
-  
   return (
     <>
       <a
