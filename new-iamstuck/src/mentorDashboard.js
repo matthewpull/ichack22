@@ -2,10 +2,9 @@
 import {Fragment} from 'react'
 import {Disclosure, Menu, Transition} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
-import App from "./App";
 import RequestsList from "./requestList";
 
-const people = [
+const requests = [
     {
         name: 'How to solve 3x+4=2?',
         title: 'Tom Nook',
@@ -24,17 +23,35 @@ const people = [
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
     },
-    // More people...
+    {
+        name: 'How do I integrate 4x cos(2−3x)d by parts?',
+        title: 'Tom Nook',
+        role: 'Maths',
+        email: 'tomnook@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    },
+    {
+        name: 'Why can I never catch the tennis ball?',
+        title: 'pug',
+        role: 'Physics',
+        email: 'pug@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
+    },
+    // More requests...
 ]
 
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
 }
 const navigation = [
-    {name: 'Mentee', href: '/', current: false},
+    {name: 'Home', href: '/', current: false},
     {name: 'Mentor', href: '/mentor', current: true},
 ]
 const userNavigation = [
@@ -209,10 +226,12 @@ export default function MentorDashboard() {
                         <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
                     </div>
                 </header>
-                <main className="flex-1 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                    {App()}
-
-                    {/* /End replace */}
+                <main>
+                    <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+                        {/* Start replace */}
+                        {RequestsList(requests)}
+                        {/* /End replace */}
+                    </div>
                 </main>
             </div>
         </>
