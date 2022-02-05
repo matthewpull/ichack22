@@ -26,7 +26,7 @@ function classNames(...classes) {
 export default function MentorDashboard() {
     return (
         <>
-            <div className="min-h-full">
+            <div className="h-full">
                 <Disclosure as="nav" className="bg-gray-800">
                     {({ open }) => (
                         <>
