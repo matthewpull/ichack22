@@ -1,14 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import { render } from "react-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+import MenteeDashboard from "./menteeDashboard";
+import MentorDashboard from "./mentorDashboard";
+
+const rootElement = document.getElementById("root");
+render(
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<MenteeDashboard />} />
+            <Route path="mentor" element={<MentorDashboard />} />
+        </Routes>
+    </BrowserRouter>,
+    rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function

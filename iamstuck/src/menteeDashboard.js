@@ -14,7 +14,7 @@
   }
   ```
 */
-export default function Example() {
+export default function MenteeDashboard() {
     return (
         <div>
             <label htmlFor="search" className="block text-sm font-medium text-gray-700">

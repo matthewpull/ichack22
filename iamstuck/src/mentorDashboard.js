@@ -26,7 +26,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function App() {
+export default function MentorDashboard() {
     return (
         <>
             <div className="min-h-full">
