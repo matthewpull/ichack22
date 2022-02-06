@@ -12,7 +12,7 @@ const user = {
 }
 const navigation = [
     {name: 'Home', href: '/', current: false},
-    {name: 'Helper', href: '/helper', current: true},
+    {name: 'Helper', href: '/helper', current: false},
 ]
 const userNavigation = [
     {name: 'Your Profile', href: '#'},
@@ -36,9 +36,9 @@ export default function CallPage() {
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                             <img
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                                alt="Workflow"
+                                                className="h-10 w-auto"
+                                                src="/iamstuck_logo.png"
+                                                alt="Logo"
                                             />
                                         </div>
                                         <div className="hidden md:block">
@@ -183,15 +183,13 @@ export default function CallPage() {
 
                 <header className="bg-white shadow flex-shrink-0">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Calling</h1>
                     </div>
                 </header>
-                <main>
-                    <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
-                        {/* Start replace */}
-                        {App()}
-                        {/* /End replace */}
-                    </div>
+                <main className="flex-1 max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+                    {/* Start replace */}
+                    {App()}
+                    {/* /End replace */}
                 </main>
             </div>
         </>

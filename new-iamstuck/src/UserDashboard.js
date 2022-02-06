@@ -3,12 +3,13 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import UserQuestionPost from "./UserQuestionPost";
+import RequestsList from "./requestList";
 
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
 }
 const navigation = [
     { name: 'User', href: '/user', current: true },
@@ -24,6 +25,46 @@ const userNavigation = [
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
+
+const requests = [
+    {
+        name: 'How to solve 3x+4=2?',
+        title: 'Tom Nook',
+        role: 'Maths',
+        email: 'tomnook@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    },
+    {
+        name: 'How long is a piece of string?',
+        title: 'Jane Cooper',
+        role: 'Physics',
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    },
+    {
+        name: 'How do I integrate 4x cos(2−3x)d by parts?',
+        title: 'Matthew Smith',
+        role: 'Maths',
+        email: 'mattsmith@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    },
+    {
+        name: 'Why can I never catch the tennis ball?',
+        title: 'pug',
+        role: 'Physics',
+        email: 'pug@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    },
+    // More requests...
+]
 
 export default function UserDashboard() {
     return (
@@ -190,7 +231,13 @@ export default function UserDashboard() {
                 <main>
                     <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
-                            { UserQuestionPost() }
+                        {UserQuestionPost()}
+                        {/* /End replace */}
+                    </div>
+
+                    <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
+                        {/* Replace with your content */}
+                        {RequestsList(requests, false)}
                         {/* /End replace */}
                     </div>
                 </main>

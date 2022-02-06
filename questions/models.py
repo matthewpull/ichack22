@@ -1,4 +1,5 @@
 from django.contrib.postgres.fields import ArrayField
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.utils import timezone
 
@@ -30,6 +31,9 @@ class Call(models.Model):
     helper = models.ForeignKey(Helper, on_delete=models.CASCADE)
     started_at = models.DateTimeField(default=timezone.now)
     ended_at = models.DateTimeField(blank=True, null=True)
+    rating = models.PositiveSmallIntegerField(blank=True, null=True, validators=[
+        MinValueValidator(0), MaxValueValidator(5)
+    ])
 
     @property
     def ended(self):
