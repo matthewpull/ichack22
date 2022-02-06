@@ -36,8 +36,8 @@ export default function UserDashboard() {
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                             <img
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                                className="h-10 w-auto"
+                                                src="/iamstuck_logo.png"
                                                 alt="Workflow"
                                             />
                                         </div>
@@ -183,7 +183,7 @@ export default function UserDashboard() {
 
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">My Dashboard</h1>
                     </div>
                 </header>
                 <main>
