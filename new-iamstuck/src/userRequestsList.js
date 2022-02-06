@@ -15,7 +15,6 @@ export default function UserRequestsList(requests, buttons=true) {
                             </div>
                             <p className="mt-1 text-gray-500 text-sm truncate">{request.title}</p>
                         </div>
-                        <img className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src={request.imageUrl} alt=""/>
                     </div>
                     {request.response &&
                         <div>
