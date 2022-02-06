@@ -6,8 +6,58 @@ export default function RequestsList(people, buttons=true) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
+    function accept(questionId, index) {
+        console.log('Accept question id ' + questionId)
+        fetch(
+            `http://${process.env.REACT_APP_BASE_URL}/questions/${questionId}/accept/`,
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    helper: 2,
+                }),
+            }
+        )
+            .then(
+                (result) => {
+                    console.log(result)
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.error(error)
+                }
+            )
+
+    }
+
+    function reject(questionId, index) {
+        console.log('Reject question id ' + questionId)
+        fetch(
+            `http://${process.env.REACT_APP_BASE_URL}/questions/${questionId}/reject/`,
+            {
+                method: 'POST',
+            }
+        ) .then(
+                (result) => {
+                    console.log(result)
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.error(error)
+                }
+            )
+
+    }
+
     useEffect(() => {
-        fetch(`http://${process.env.REACT_APP_BASE_URL}/questions/unanswered/`)
+        fetch(`http://${process.env.REACT_APP_BASE_URL}/questions/tutor/`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,7 +81,7 @@ export default function RequestsList(people, buttons=true) {
         console.log(items)
         return (
             <ul className="grid grid-cols-1 gap-6 ">
-                {items.map((item) => (
+                {items.map((item, index) => (
                     <li key={item.id} className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
                         <div className="w-full flex items-center justify-between p-6 space-x-6">
                             <div className="flex-1 truncate">
@@ -55,7 +105,7 @@ export default function RequestsList(people, buttons=true) {
                         <div>
                             <div className="flex divide-x divide-gray-200">
                                 <div className="w-0 flex-1 flex">
-                                    <button
+                                    <button onClick={e => reject(item.id, index)}
                                         className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500 hover:bg-gray-50"
                                     >
                                         <XIcon className="w-5 h-5 text-redcross" aria-hidden="true"/>
@@ -63,7 +113,7 @@ export default function RequestsList(people, buttons=true) {
                                     </button>
                                 </div>
                                 <div className="w-0 flex-1 flex">
-                                    <button
+                                    <button onClick={e => accept(item.id, index)}
                                         className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500 hover:bg-gray-50"
                                     >
                                         <CheckIcon className="w-5 h-5 text-textlight" aria-hidden="true"/>
