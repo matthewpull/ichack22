@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {MailIcon, PhoneIcon, StarIcon} from '@heroicons/react/solid'
+import {StarIcon} from '@heroicons/react/solid'
 import {useEffect, useState} from "react";
 
 export default function HelperProfiles() {
