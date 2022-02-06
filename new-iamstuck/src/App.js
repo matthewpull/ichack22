@@ -4,9 +4,10 @@ import useCurrentUri from './useCurrentUri';
 import useWebexOAuth from './useWebexOAuth';
 
 import './App.css';
+import Rate from "./Rate";
 
 function App() {
-  const webexToken = useWebexOAuth();  
+  const webexToken = useWebexOAuth();
   const redirectURI = useCurrentUri();
 
   return (
