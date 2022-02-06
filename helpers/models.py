@@ -1,6 +1,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import Avg
+from django.db.models.functions import Coalesce
 
 
 class Helper(models.Model):
@@ -11,7 +12,7 @@ class Helper(models.Model):
 
     @property
     def rating(self):
-        return f"{self.call_set.filter(rating__isnull=False).aggregate(avg=Avg('rating'))['avg']:.2f}"
+        return f"{self.call_set.filter(rating__isnull=False).aggregate(avg=Coalesce(Avg('rating'), 3.0))['avg']:.2f}"
 
     def __str__(self):
         return self.name
