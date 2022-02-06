@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { PaperClipIcon, TagIcon } from '@heroicons/react/solid'
+import { PaperClipIcon, AcademicCapIcon, HashtagIcon} from '@heroicons/react/solid'
 
 /*
 This example requires Tailwind CSS v2.0+
@@ -21,11 +21,14 @@ plugins: [
 
 const labels = [
     { name: 'GCSE', value: 'gcse' },
+    { name: 'AS Level', value: 'gcse' },
     { name: 'A Level', value: 'a level' },
 // More items...
 ]
 const subjects = [
     { name: 'Maths', value: 'maths' },
+    { name: 'English', value: 'english' },
+    { name: 'History', value: 'history' },
     { name: 'Chemistry', value: 'chemistry' },
     { name: 'Engineering', value: 'engineering' },
 // More items...
@@ -87,7 +90,7 @@ export default function UserQuestionPost() {
                                 <Listbox.Label className="sr-only">Add a label</Listbox.Label>
                                 <div className="relative">
                                     <Listbox.Button className="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3">
-                                        <TagIcon
+                                        <AcademicCapIcon
                                             className={classNames(
                                                 labelled.value === null ? 'text-gray-300' : 'text-gray-500',
                                                 'flex-shrink-0 h-5 w-5 sm:-ml-1'
@@ -141,7 +144,7 @@ export default function UserQuestionPost() {
                                 <Listbox.Label className="sr-only">Add a subject</Listbox.Label>
                                 <div className="relative">
                                     <Listbox.Button className="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3">
-                                        <TagIcon
+                                        <HashtagIcon
                                             className={classNames(
                                                 assigned.value === null ? 'text-gray-300' : 'text-gray-500',
                                                 'flex-shrink-0 h-5 w-5 sm:-ml-1'
