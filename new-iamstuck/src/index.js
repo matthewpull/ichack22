@@ -9,6 +9,7 @@ import {
 import './index_compiled.css';
 import reportWebVitals from './reportWebVitals';
 import MentorDashboard from "./mentorDashboard";
+import CallPage from "./callPage";
 
 const rootElement = document.getElementById("root");
 
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Routes>
               <Route path="/" element={<h2>Hello</h2>} />
               <Route path="mentor" element={<MentorDashboard />} />
+              <Route path="call" element={<CallPage />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,
