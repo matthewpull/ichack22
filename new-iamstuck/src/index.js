@@ -9,6 +9,7 @@ import {
 import './index_compiled.css';
 import reportWebVitals from './reportWebVitals';
 import MentorDashboard from "./mentorDashboard";
+import CallPage from "./callPage";
 import UserDashboard from "./UserDashboard";
 
 const rootElement = document.getElementById("root");
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Routes>
               <Route path="/" element={<UserDashboard />} />
               <Route path="mentor" element={<MentorDashboard />} />
+              <Route path="call" element={<CallPage />} />
               <Route path="user" element={<UserDashboard />} />
           </Routes>
       </BrowserRouter>

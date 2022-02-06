@@ -2698,7 +2698,7 @@
     lodash "^4.17.21"
     uuid "^3.3.2"
 
-"@webex/widgets@^1.20.6":
+"@webex/widgets@^1.24.0":
   version "1.24.0"
   resolved "https://registry.yarnpkg.com/@webex/widgets/-/widgets-1.24.0.tgz#a972c4985e0fd55106ade25f58d69350e68d124e"
   integrity sha512-bNkWaUhLYuJ/0lH3rD3HnMilhHQFo9RAipWwOQsor7JnkQHASJBRwM9VzgNOWJms9UBgBI+2E6M454N98G3KXQ==

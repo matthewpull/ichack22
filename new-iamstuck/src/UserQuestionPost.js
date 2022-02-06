@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CalendarIcon, PaperClipIcon, TagIcon, UserCircleIcon } from '@heroicons/react/solid'
+import { PaperClipIcon, TagIcon } from '@heroicons/react/solid'
 
 /*
 This example requires Tailwind CSS v2.0+
