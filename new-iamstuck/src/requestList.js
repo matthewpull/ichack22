@@ -48,6 +48,8 @@ export default function RequestsList(people, buttons=true) {
                                 </div>
                                 <p className="mt-1 text-gray-500 text-sm truncate">{item.text}</p>
                             </div>
+                            <img className="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src='https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
+                                 alt=""/>
                         </div>
                         {buttons &&
                         <div>
