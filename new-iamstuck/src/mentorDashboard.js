@@ -51,7 +51,7 @@ const user = {
         'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
 }
 const navigation = [
-    {name: 'User', href: '/user', current: false},
+    {name: 'User', href: '/', current: false},
     {name: 'Mentor', href: '/mentor', current: true},
 ]
 const userNavigation = [
@@ -78,7 +78,7 @@ export default function MentorDashboard() {
                                             <img
                                                 className="h-10 w-auto"
                                                 src="/iamstuck_logo.png"
-                                                alt="Workflow"
+                                                alt="Logo"
                                             />
                                         </div>
                                         <div className="hidden md:block">
