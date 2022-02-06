@@ -59,11 +59,11 @@ export default function UserQuestionPost() {
                     Description
                 </label>
                 <textarea
-                    rows={2}
+                    rows={5}
                     name="description"
                     id="description"
                     className="block w-full border-0 py-0 resize-none placeholder-gray-500 focus:ring-0 sm:text-sm"
-                    placeholder="Write a description..."
+                    placeholder="Write a question..."
                     defaultValue={''}
                 />
 
