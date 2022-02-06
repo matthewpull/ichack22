@@ -42,7 +42,7 @@ export default function RequestsList(people, buttons=true) {
             {
                 method: 'POST',
             }
-        ) .then(
+        ).then(
                 (result) => {
                     console.log(result)
                 },
