@@ -1,43 +1,45 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {Fragment} from 'react'
-import {Disclosure, Menu, Transition} from '@headlessui/react'
-import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
-import App from "./App";
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import UserQuestionPost from "./UserQuestionPost";
+import HelperProfiles from "./HelperProfiles";
 
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
-        'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-    {name: 'Home', href: '/', current: false},
-    {name: 'Helper', href: '/helper', current: true},
+    { name: 'User', href: '/user', current: false },
+    { name: 'Helper', href: '/helper', current: false },
+    { name: 'Browse', href: '/browse', current: true},
 ]
 const userNavigation = [
-    {name: 'Your Profile', href: '#'},
-    {name: 'Settings', href: '#'},
-    {name: 'Sign out', href: '#'},
+    { name: 'Your Profile', href: '#' },
+    { name: 'Settings', href: '#' },
+    { name: 'Sign out', href: '#' },
 ]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function CallPage() {
+export default function Browse() {
     return (
         <>
-            <div className="h-full w-full flex flex-col">
-                <Disclosure as="nav" className="bg-gray-800 flex-shrink-0">
-                    {({ open }) => (
+            <div className="min-h-full">
+                <Disclosure as="nav" className="bg-gray-800">
+                    {({open}) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex items-center justify-between h-16">
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                             <img
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                                className="h-10 w-auto"
+                                                src="/iamstuck_logo.png"
                                                 alt="Workflow"
                                             />
                                         </div>
@@ -181,15 +183,15 @@ export default function CallPage() {
                     )}
                 </Disclosure>
 
-                <header className="bg-white shadow flex-shrink-0">
+                <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Browse Helpers</h1>
                     </div>
                 </header>
                 <main>
-                    <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
-                        {/* Start replace */}
-                        {App()}
+                    <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
+                        {/* Replace with your content */}
+                            { HelperProfiles() }
                         {/* /End replace */}
                     </div>
                 </main>

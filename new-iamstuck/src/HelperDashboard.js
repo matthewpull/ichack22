@@ -52,7 +52,8 @@ const user = {
 }
 const navigation = [
     {name: 'User', href: '/user', current: false},
-    {name: 'Mentor', href: '/mentor', current: true},
+    {name: 'Helper', href: '/helper', current: true},
+    {name: 'Browse', href: '/browse', current: false},
 ]
 const userNavigation = [
     {name: 'Your Profile', href: '#'},
@@ -64,7 +65,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function MentorDashboard() {
+export default function HelperDashboard() {
     return (
         <>
             <div className="h-full w-full flex flex-col">

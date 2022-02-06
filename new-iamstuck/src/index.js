@@ -8,9 +8,10 @@ import {
 
 import './index_compiled.css';
 import reportWebVitals from './reportWebVitals';
-import MentorDashboard from "./mentorDashboard";
+import HelperDashboard from "./HelperDashboard";
 import CallPage from "./callPage";
 import UserDashboard from "./UserDashboard";
+import Browse from "./Browse";
 
 const rootElement = document.getElementById("root");
 
@@ -19,9 +20,10 @@ ReactDOM.render(
       <BrowserRouter>
           <Routes>
               <Route path="/" element={<UserDashboard />} />
-              <Route path="mentor" element={<MentorDashboard />} />
+              <Route path="helper" element={<HelperDashboard />} />
               <Route path="call" element={<CallPage />} />
               <Route path="user" element={<UserDashboard />} />
+              <Route path="browse" element={<Browse />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,
