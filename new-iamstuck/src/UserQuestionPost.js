@@ -16,6 +16,7 @@ export default function UserQuestionPost() {
     const [labelled, setLabelled] = useState(labels[0])
 
     function submit(event) {
+        event.preventDefault();
         console.log({
                     title: title,
                     text: text,
@@ -50,6 +51,7 @@ export default function UserQuestionPost() {
                 console.error(error)
             }
         )
+        window.location.reload(false)
     }
 
     return (
