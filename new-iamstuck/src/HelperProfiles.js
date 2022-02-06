@@ -46,14 +46,14 @@ const people = [
     },
 
     {
-        name: 'Jane Cooper',
+        name: 'Alex Alan',
         title: 'Paradigm Representative',
         role: 'Admin',
         rating: '5',
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+        'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
     },
 
     {

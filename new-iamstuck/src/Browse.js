@@ -5,10 +5,10 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import HelperProfiles from "./HelperProfiles";
 
 const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
+    name: 'Sam Trew',
+    email: 'sam@example.com',
     imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
 }
 const navigation = [
     { name: 'User', href: '/user', current: false },

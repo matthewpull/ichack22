@@ -11,8 +11,9 @@ const user = {
         'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
 }
 const navigation = [
-    {name: 'Home', href: '/', current: false},
-    {name: 'Helper', href: '/helper', current: false},
+    { name: 'User', href: '/user', current: false },
+    { name: 'Helper', href: '/helper', current: false },
+    { name: 'Browse', href: '/browse', current: false},
 ]
 const userNavigation = [
     {name: 'Your Profile', href: '#'},
