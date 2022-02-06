@@ -10,6 +10,7 @@ import './index_compiled.css';
 import reportWebVitals from './reportWebVitals';
 import MentorDashboard from "./mentorDashboard";
 import CallPage from "./callPage";
+import UserDashboard from "./UserDashboard";
 
 const rootElement = document.getElementById("root");
 
@@ -20,6 +21,7 @@ ReactDOM.render(
               <Route path="/" element={<h2>Hello</h2>} />
               <Route path="mentor" element={<MentorDashboard />} />
               <Route path="call" element={<CallPage />} />
+              <Route path="user" element={<UserDashboard />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,

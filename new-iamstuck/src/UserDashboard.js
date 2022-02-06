@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import UserQuestionPost from "./UserQuestionPost";
 
 const user = {
     name: 'Tom Cook',
@@ -10,8 +11,8 @@ const user = {
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-    { name: 'Mentee', href: '/', current: false },
-    { name: 'Mentor', href: '/mentor', current: true },
+    { name: 'User', href: '/user', current: true },
+    { name: 'Mentor', href: '/mentor', current: false },
 ]
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -23,12 +24,12 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function MentorDashboard() {
+export default function UserDashboard() {
     return (
         <>
-            <div className="h-full">
+            <div className="min-h-full">
                 <Disclosure as="nav" className="bg-gray-800">
-                    {({ open }) => (
+                    {({open}) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex items-center justify-between h-16">
@@ -67,15 +68,17 @@ export default function MentorDashboard() {
                                                 className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                             >
                                                 <span className="sr-only">View notifications</span>
-                                                <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                                <BellIcon className="h-6 w-6" aria-hidden="true"/>
                                             </button>
 
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="ml-3 relative">
                                                 <div>
-                                                    <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                    <Menu.Button
+                                                        className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                         <span className="sr-only">Open user menu</span>
-                                                        <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                                                        <img className="h-8 w-8 rounded-full" src={user.imageUrl}
+                                                             alt=""/>
                                                     </Menu.Button>
                                                 </div>
                                                 <Transition
@@ -87,10 +90,11 @@ export default function MentorDashboard() {
                                                     leaveFrom="transform opacity-100 scale-100"
                                                     leaveTo="transform opacity-0 scale-95"
                                                 >
-                                                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                    <Menu.Items
+                                                        className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                         {userNavigation.map((item) => (
                                                             <Menu.Item key={item.name}>
-                                                                {({ active }) => (
+                                                                {({active}) => (
                                                                     <a
                                                                         href={item.href}
                                                                         className={classNames(
@@ -110,12 +114,13 @@ export default function MentorDashboard() {
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
                                         {/* Mobile menu button */}
-                                        <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <Disclosure.Button
+                                            className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open main menu</span>
                                             {open ? (
-                                                <XIcon className="block h-6 w-6" aria-hidden="true" />
+                                                <XIcon className="block h-6 w-6" aria-hidden="true"/>
                                             ) : (
-                                                <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                                                <MenuIcon className="block h-6 w-6" aria-hidden="true"/>
                                             )}
                                         </Disclosure.Button>
                                     </div>
@@ -142,18 +147,20 @@ export default function MentorDashboard() {
                                 <div className="pt-4 pb-3 border-t border-gray-700">
                                     <div className="flex items-center px-5">
                                         <div className="flex-shrink-0">
-                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt=""/>
                                         </div>
                                         <div className="ml-3">
-                                            <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                                            <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                                            <div
+                                                className="text-base font-medium leading-none text-white">{user.name}</div>
+                                            <div
+                                                className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                                         </div>
                                         <button
                                             type="button"
                                             className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                         >
                                             <span className="sr-only">View notifications</span>
-                                            <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                            <BellIcon className="h-6 w-6" aria-hidden="true"/>
                                         </button>
                                     </div>
                                     <div className="mt-3 px-2 space-y-1">
@@ -180,11 +187,9 @@ export default function MentorDashboard() {
                     </div>
                 </header>
                 <main>
-                    <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                    <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
-                        <div className="px-4 py-6 sm:px-0">
-                            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-                        </div>
+                            { UserQuestionPost() }
                         {/* /End replace */}
                     </div>
                 </main>
