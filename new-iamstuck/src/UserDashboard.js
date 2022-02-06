@@ -3,13 +3,13 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import UserQuestionPost from "./UserQuestionPost";
-import RequestsList from "./requestList";
+import UserRequestsList from "./userRequestsList";
 
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
-        'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+    'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
 }
 const navigation = [
     { name: 'User', href: '/user', current: true },
@@ -29,39 +29,39 @@ function classNames(...classes) {
 const requests = [
     {
         name: 'How to solve 3x+4=2?',
-        title: 'Tom Nook',
+        title: 'Sam Trew',
         role: 'Maths',
         email: 'tomnook@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+            'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
     },
     {
         name: 'How long is a piece of string?',
-        title: 'Jane Cooper',
+        title: 'Sam Trew',
         role: 'Physics',
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+            'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
     },
     {
         name: 'How do I integrate 4x cos(2−3x)d by parts?',
-        title: 'Matthew Smith',
+        title: 'Sam Trew',
         role: 'Maths',
         email: 'mattsmith@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+            'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
     },
     {
         name: 'Why can I never catch the tennis ball?',
-        title: 'pug',
+        title: 'Sam Trew',
         role: 'Physics',
         email: 'pug@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
+            'https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/178581459_2189625051179840_7814560823471489211_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tpnrP53DFnAAX93Ss4y&tn=-udhKjWfubTp03iO&_nc_ht=scontent-lhr8-1.xx&oh=00_AT8_z6tgZH-wGs1pZAlSrs9_fes8y3Eh6vhhtO3cmTqlow&oe=622420F1'
     },
     // More requests...
 ]
@@ -237,7 +237,7 @@ export default function UserDashboard() {
 
                     <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
-                        {RequestsList(requests, false)}
+                        {UserRequestsList(requests)}
                         {/* /End replace */}
                     </div>
                 </main>
