@@ -1,5 +1,6 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from django.db.models import Avg
 
 
 class Helper(models.Model):
@@ -7,7 +8,10 @@ class Helper(models.Model):
     image = models.URLField(blank=True, null=True)
     bio = models.TextField()
     topics = ArrayField(models.SlugField())
-    rating = models.FloatField()
+
+    @property
+    def rating(self):
+        return self.call_set.filter(rating__isnull=False).aggregate(Avg("rating"))
 
     def __str__(self):
         return self.name
