@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 
 from questions.models import Question, Reply, Call
@@ -9,6 +10,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     permission_classes = [AllowAny]
+
+    @action(detail=False)
+    def unanswered(self):
+        return self.queryset.filter(answered=False)
 
 
 class ReplyViewSet(viewsets.ModelViewSet):
