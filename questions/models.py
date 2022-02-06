@@ -13,6 +13,10 @@ class Question(models.Model):
     topic = models.CharField(max_length=30)
     answered = models.BooleanField(default=False)
     hidden = models.BooleanField(default=False)
+    asked_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ["-asked_at"]
 
     def __str__(self):
         output = self.title

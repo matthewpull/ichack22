@@ -39,6 +39,10 @@ export default function UserRequestsList() {
                                     <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
                                       {request.topic}
                                     </span>
+                                    <span
+                                        className="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">
+                                        {request.level}
+                                    </span>
                                 </div>
                                 <p className="mt-1 text-gray-500 text-sm truncate">{request.text}</p>
                             </div>

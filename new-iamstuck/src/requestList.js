@@ -21,18 +21,18 @@ export default function RequestsList(people, buttons=true) {
                 }),
             }
         )
-            .then(
-                (result) => {
-                    console.log(result)
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    console.error(error)
-                }
-            )
-
+        .then(
+            (result) => {
+                console.log(result)
+                setItems(items.filter((_, i) => i !== index))
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+                console.error(error)
+            }
+        )
     }
 
     function reject(questionId, index) {
@@ -43,17 +43,17 @@ export default function RequestsList(people, buttons=true) {
                 method: 'POST',
             }
         ).then(
-                (result) => {
-                    console.log(result)
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    console.error(error)
-                }
-            )
-
+            (result) => {
+                console.log(result)
+                setItems(items.filter((_, i) => i !== index))
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+                console.error(error)
+            }
+        )
     }
 
     useEffect(() => {
@@ -89,12 +89,12 @@ export default function RequestsList(people, buttons=true) {
                                     <h3 className="text-textdark text-sm font-medium truncate">{item.title}</h3>
                                     <span
                                         className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
-                                  {item.level}
-                                </span>
+                                        {item.level}
+                                    </span>
                                     <span
                                         className="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">
-                                  {item.topic}
-                                </span>
+                                        {item.topic}
+                                    </span>
                                 </div>
                                 <p className="mt-1 text-gray-500 text-sm truncate">{item.text}</p>
                             </div>
