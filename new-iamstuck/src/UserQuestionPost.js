@@ -10,16 +10,58 @@ function classNames(...classes) {
 }
 
 export default function UserQuestionPost() {
+    const [title, setTitle] = useState("")
+    const [text, setText] = useState("")
     const [assigned, setAssigned] = useState(subjects[0])
     const [labelled, setLabelled] = useState(labels[0])
 
+    function submit(event) {
+        event.preventDefault();
+        console.log({
+                    title: title,
+                    text: text,
+                    level: assigned,
+                    topic: labelled,
+                })
+        fetch(
+            `http://${process.env.REACT_APP_BASE_URL}/questions/`,
+            {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: title,
+                    text: text,
+                    level: assigned,
+                    topic: labelled,
+                }),
+            }
+        )
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result)
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+                console.error(error)
+            }
+        )
+    }
+
     return (
-        <form action="#" className="relative">
+        <form action="#" className="relative" onSubmit={submit}>
             <div className="bg-white border border-gray-300 rounded-lg shadow-sm overflow-hidden focus-within:border-accent focus-within:ring-1 focus-within:ring-accent">
                 <label htmlFor="title" className="sr-only">
                     Title
                 </label>
                 <input
+                    value={title.value}
+                    onChange={e => setTitle(e.target.value)}
                     type="text"
                     name="title"
                     id="title"
@@ -30,6 +72,8 @@ export default function UserQuestionPost() {
                     Description
                 </label>
                 <textarea
+                    value={text.value}
+                    onChange={e => setText(e.target.value)}
                     rows={5}
                     name="description"
                     id="description"

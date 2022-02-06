@@ -9,7 +9,7 @@ from helpers.models import Helper
 class Question(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
-    level = models.CharField(max_length=10)
+    level = models.CharField(max_length=20)
     topic = models.CharField(max_length=30)
     answered = models.BooleanField(default=False)
 
@@ -23,7 +23,7 @@ class Question(models.Model):
 class Reply(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     helper = models.ForeignKey(Helper, on_delete=models.CASCADE)
-    answer = models.TextField()
+    answer = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.answer[:50]
