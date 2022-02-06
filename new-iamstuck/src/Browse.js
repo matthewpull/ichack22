@@ -13,7 +13,7 @@ const user = {
 const navigation = [
     { name: 'User', href: '/user', current: false },
     { name: 'Helper', href: '/helper', current: false },
-    { name: 'Browse', href: '/browse', current: true},
+    { name: 'Profiles', href: '/profiles', current: true},
 ]
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -188,7 +188,7 @@ export default function Browse() {
                     </div>
                 </header>
                 <main>
-                    <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
+                    <div className="max-w-3xl md:max-w-5xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
                             { HelperProfiles() }
                         {/* /End replace */}

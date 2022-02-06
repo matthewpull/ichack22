@@ -8,7 +8,7 @@ export default function HelperProfiles() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://146.169.216.128:8000/helpers/")
+        fetch(`http://${process.env.REACT_APP_BASE_URL}/helpers/`)
             .then(res => res.json())
             .then(
                 (result) => {

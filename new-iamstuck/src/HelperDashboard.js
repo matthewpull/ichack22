@@ -53,7 +53,7 @@ const user = {
 const navigation = [
     {name: 'User', href: '/user', current: false},
     {name: 'Helper', href: '/helper', current: true},
-    {name: 'Browse', href: '/browse', current: false},
+    {name: 'Profiles', href: '/profiles', current: false},
 ]
 const userNavigation = [
     {name: 'Your Profile', href: '#'},
