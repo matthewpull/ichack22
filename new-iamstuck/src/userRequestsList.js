@@ -1,4 +1,3 @@
-import {XIcon, CheckIcon} from '@heroicons/react/solid'
 import {PhoneIcon} from "@heroicons/react/outline";
 
 export default function UserRequestsList(people, buttons=true) {
