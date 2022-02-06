@@ -44,7 +44,7 @@ export default function HelperProfiles() {
                                 <dd className="text-gray-500 text-sm">{person.bio}</dd>
                                 <div className="mt-2 flex items-center justify-center"><span
                                     className="font-medium">{person.rating}</span>
-                                    <StarIcon className="w-5 h-5 text-yellow-500" aria-hidden="true"/>
+                                    <StarIcon className="w-5 h-5 ml-0.5 text-yellow-500" aria-hidden="true"/>
                                 </div>
                                 <dt className="sr-only">Role</dt>
                                 <dd className="mt-2">
