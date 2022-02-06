@@ -1,7 +1,10 @@
 from rest_framework import serializers
 
+from helpers.models import Helper
+
 
 class HelperSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ("id", "name", "image", "bio", "topics", "rating")
+        model = Helper
+        fields = ("id", "name", "image", "bio", "topic", "rating")
         read_only_fields = ("id", "rating")
