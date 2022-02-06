@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import UserQuestionPost from "./UserQuestionPost";
-import RequestsList from "./requestList";
+import UserRequestsList from "./userRequestsList";
 
 const user = {
     name: 'Tom Cook',
@@ -237,7 +237,7 @@ export default function UserDashboard() {
 
                     <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
-                        {RequestsList(requests, false)}
+                        {UserRequestsList(requests)}
                         {/* /End replace */}
                     </div>
                 </main>
