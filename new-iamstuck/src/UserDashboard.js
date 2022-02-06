@@ -235,7 +235,7 @@ export default function UserDashboard() {
 
                     <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
-                        {UserRequestsList(requests)}
+                        {UserRequestsList()}
                         {/* /End replace */}
                     </div>
                 </main>
