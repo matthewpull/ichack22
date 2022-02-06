@@ -2,7 +2,6 @@
   "name": "webex-meeting-widget-starter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://webexsamples.github.io/webex-meeting-widget-starter",
   "dependencies": {
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",

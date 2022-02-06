@@ -17,7 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={<h2>Hello</h2>} />
+              <Route path="/" element={<UserDashboard />} />
               <Route path="mentor" element={<MentorDashboard />} />
               <Route path="user" element={<UserDashboard />} />
           </Routes>
