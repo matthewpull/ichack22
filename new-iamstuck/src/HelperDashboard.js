@@ -53,7 +53,7 @@ const user = {
 const navigation = [
     {name: 'User', href: '/user', current: false},
     {name: 'Helper', href: '/helper', current: true},
-    {name: 'Browse', href: '/browse', current: false},
+    {name: 'Profiles', href: '/profiles', current: false},
 ]
 const userNavigation = [
     {name: 'Your Profile', href: '#'},
@@ -69,7 +69,7 @@ export default function HelperDashboard() {
     return (
         <>
             <div className="h-full w-full flex flex-col">
-                <Disclosure as="nav" className="bg-gray-800 flex-shrink-0">
+                <Disclosure as="nav" className="bg-primary flex-shrink-0">
                     {({ open }) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +78,7 @@ export default function HelperDashboard() {
                                         <div className="flex-shrink-0">
                                             <img
                                                 className="h-10 w-auto"
-                                                src="/iamstuck_logo.png"
+                                                src="/iamstuck_logo_white.png"
                                                 alt="Workflow"
                                             />
                                         </div>
@@ -90,8 +90,8 @@ export default function HelperDashboard() {
                                                         href={item.href}
                                                         className={classNames(
                                                             item.current
-                                                                ? 'bg-gray-900 text-white'
-                                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                ? 'bg-primary text-background'
+                                                                : 'bg-textlight text-background hover:bg-buttonpress hover:text-background',
                                                             'px-3 py-2 rounded-md text-sm font-medium'
                                                         )}
                                                         aria-current={item.current ? 'page' : undefined}
@@ -106,7 +106,7 @@ export default function HelperDashboard() {
                                         <div className="ml-4 flex items-center md:ml-6">
                                             <button
                                                 type="button"
-                                                className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                                className="bg-background p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                             >
                                                 <span className="sr-only">View notifications</span>
                                                 <BellIcon className="h-6 w-6" aria-hidden="true"/>
@@ -116,7 +116,7 @@ export default function HelperDashboard() {
                                             <Menu as="div" className="ml-3 relative">
                                                 <div>
                                                     <Menu.Button
-                                                        className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                        className="max-w-xs bg-background rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                         <span className="sr-only">Open user menu</span>
                                                         <img className="h-8 w-8 rounded-full" src={user.imageUrl}
                                                              alt=""/>
@@ -156,7 +156,7 @@ export default function HelperDashboard() {
                                     <div className="-mr-2 flex md:hidden">
                                         {/* Mobile menu button */}
                                         <Disclosure.Button
-                                            className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                            className="bg-background inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-background focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open main menu</span>
                                             {open ? (
                                                 <XIcon className="block h-6 w-6" aria-hidden="true"/>
@@ -176,7 +176,7 @@ export default function HelperDashboard() {
                                             as="a"
                                             href={item.href}
                                             className={classNames(
-                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                item.current ? 'bg-background text-white' : 'bg-textlight hover:bg-background hover:text-white',
                                                 'block px-3 py-2 rounded-md text-base font-medium'
                                             )}
                                             aria-current={item.current ? 'page' : undefined}
@@ -198,7 +198,7 @@ export default function HelperDashboard() {
                                         </div>
                                         <button
                                             type="button"
-                                            className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                            className="ml-auto bg-background flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                         >
                                             <span className="sr-only">View notifications</span>
                                             <BellIcon className="h-6 w-6" aria-hidden="true"/>
@@ -210,7 +210,7 @@ export default function HelperDashboard() {
                                                 key={item.name}
                                                 as="a"
                                                 href={item.href}
-                                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-background"
                                             >
                                                 {item.name}
                                             </Disclosure.Button>
@@ -224,7 +224,7 @@ export default function HelperDashboard() {
 
                 <header className="bg-white shadow flex-shrink-0">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-textdark">Helper Dashboard</h1>
                     </div>
                 </header>
                 <main>

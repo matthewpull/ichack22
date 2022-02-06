@@ -23,7 +23,7 @@ ReactDOM.render(
               <Route path="helper" element={<HelperDashboard />} />
               <Route path="call" element={<CallPage />} />
               <Route path="user" element={<UserDashboard />} />
-              <Route path="browse" element={<Browse />} />
+              <Route path="profiles" element={<Browse />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,

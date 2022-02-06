@@ -8,7 +8,7 @@ export default function HelperProfiles() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://146.169.216.128:8000/helpers/")
+        fetch(`http://${process.env.REACT_APP_BASE_URL}/helpers/`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -38,13 +38,13 @@ export default function HelperProfiles() {
                     >
                         <div className="flex-1 flex flex-col p-8">
                             <img className="w-32 h-32 flex-shrink-0 mx-auto rounded-full object-cover" src={person.image} alt=""/>
-                            <h3 className="mt-6 text-gray-900 text-sm font-medium">{person.name}</h3>
+                            <h3 className="mt-6 text-textdark text-sm font-medium">{person.name}</h3>
                             <dl className="mt-1 flex-grow flex flex-col justify-between">
                                 <dt className="sr-only">Title</dt>
                                 <dd className="text-gray-500 text-sm">{person.bio}</dd>
                                 <div className="mt-2 flex items-center justify-center"><span
                                     className="font-medium">{person.rating}</span>
-                                    <StarIcon className="w-5 h-5 text-yellow-500" aria-hidden="true"/>
+                                    <StarIcon className="w-5 h-5 ml-0.5 text-yellow-500" aria-hidden="true"/>
                                 </div>
                                 <dt className="sr-only">Role</dt>
                                 <dd className="mt-2">

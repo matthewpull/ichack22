@@ -92,14 +92,14 @@ export default function UserQuestionPost() {
                                     <Listbox.Button className="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3">
                                         <AcademicCapIcon
                                             className={classNames(
-                                                labelled.value === null ? 'text-gray-300' : 'text-gray-500',
+                                                labelled.value === null ? 'bg-textlight' : 'text-gray-500',
                                                 'flex-shrink-0 h-5 w-5 sm:-ml-1'
                                             )}
                                             aria-hidden="true"
                                         />
                                         <span
                                             className={classNames(
-                                                labelled.value === null ? '' : 'text-gray-900',
+                                                labelled.value === null ? '' : 'text-textdark',
                                                 'hidden truncate sm:ml-2 sm:block'
                                             )}
                                         >
@@ -146,14 +146,14 @@ export default function UserQuestionPost() {
                                     <Listbox.Button className="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3">
                                         <HashtagIcon
                                             className={classNames(
-                                                assigned.value === null ? 'text-gray-300' : 'text-gray-500',
+                                                assigned.value === null ? 'bg-textlight' : 'text-gray-500',
                                                 'flex-shrink-0 h-5 w-5 sm:-ml-1'
                                             )}
                                             aria-hidden="true"
                                         />
                                         <span
                                             className={classNames(
-                                                assigned.value === null ? '' : 'text-gray-900',
+                                                assigned.value === null ? '' : 'text-textdark',
                                                 'hidden truncate sm:ml-2 sm:block'
                                             )}
                                         >
@@ -205,7 +205,7 @@ export default function UserQuestionPost() {
                     <div className="flex-shrink-0">
                         <button
                             type="submit"
-                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-accent hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Post
                         </button>

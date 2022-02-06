@@ -13,7 +13,7 @@ const user = {
 const navigation = [
     { name: 'User', href: '/user', current: false },
     { name: 'Helper', href: '/helper', current: false },
-    { name: 'Browse', href: '/browse', current: true},
+    { name: 'Profiles', href: '/profiles', current: true},
 ]
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -29,7 +29,7 @@ export default function Browse() {
     return (
         <>
             <div className="min-h-full">
-                <Disclosure as="nav" className="bg-gray-800">
+                <Disclosure as="nav" className="bg-primary">
                     {({open}) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ export default function Browse() {
                                         <div className="flex-shrink-0">
                                             <img
                                                 className="h-10 w-auto"
-                                                src="/iamstuck_logo.png"
+                                                src="/iamstuck_logo_white.png"
                                                 alt="Workflow"
                                             />
                                         </div>
@@ -50,8 +50,8 @@ export default function Browse() {
                                                         href={item.href}
                                                         className={classNames(
                                                             item.current
-                                                                ? 'bg-gray-900 text-white'
-                                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                ? 'bg-primary text-background'
+                                                                : 'bg-textlight text-background hover:buttonpress hover:text-background',
                                                             'px-3 py-2 rounded-md text-sm font-medium'
                                                         )}
                                                         aria-current={item.current ? 'page' : undefined}
@@ -136,7 +136,7 @@ export default function Browse() {
                                             as="a"
                                             href={item.href}
                                             className={classNames(
-                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                item.current ? 'bg-gray-900 text-white' : 'bg-textlight hover:bg-gray-700 hover:text-white',
                                                 'block px-3 py-2 rounded-md text-base font-medium'
                                             )}
                                             aria-current={item.current ? 'page' : undefined}
@@ -184,11 +184,11 @@ export default function Browse() {
 
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Browse Helpers</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Profiles</h1>
                     </div>
                 </header>
                 <main>
-                    <div className="max-w-3xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
+                    <div className="max-w-3xl md:max-w-5xl mx-auto py-6 px-20 sm:px-20 lg:px-8">
                         {/* Replace with your content */}
                             { HelperProfiles() }
                         {/* /End replace */}
