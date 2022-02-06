@@ -51,7 +51,7 @@ export default function UserQuestionPost() {
                 console.error(error)
             }
         )
-        event.target.reset();
+        window.location.reload(false)
     }
 
     return (
