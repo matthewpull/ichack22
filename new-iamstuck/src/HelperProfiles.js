@@ -48,7 +48,7 @@ const people = [
         name: 'Jane Cooper',
         title: 'Paradigm Representative',
         role: 'Admin',
-        rating:'5',
+        rating:'3.21',
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
@@ -59,7 +59,7 @@ const people = [
         name: 'Jane Cooper',
         title: 'Paradigm Representative',
         role: 'Admin',
-        rating:'5.0',
+        rating:'1.99',
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
