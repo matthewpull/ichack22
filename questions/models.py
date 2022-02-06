@@ -7,12 +7,14 @@ from helpers.models import Helper
 
 
 class Question(models.Model):
+    title = models.CharField(max_length=100)
     text = models.TextField()
-    tags = ArrayField(models.SlugField())
+    level = models.CharField(max_length=10)
+    topic = models.CharField(max_length=30)
     answered = models.BooleanField(default=False)
 
     def __str__(self):
-        output = self.text[:50]
+        output = self.title
         if self.answered:
             output += " [ANSWERED]"
         return output
