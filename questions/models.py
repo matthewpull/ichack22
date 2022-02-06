@@ -1,6 +1,6 @@
-from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from django.db.models import UniqueConstraint
 from django.utils import timezone
 
 from helpers.models import Helper
@@ -12,6 +12,7 @@ class Question(models.Model):
     level = models.CharField(max_length=20)
     topic = models.CharField(max_length=30)
     answered = models.BooleanField(default=False)
+    hidden = models.BooleanField(default=False)
 
     def __str__(self):
         output = self.title
@@ -25,8 +26,11 @@ class Reply(models.Model):
     helper = models.ForeignKey(Helper, on_delete=models.CASCADE)
     answer = models.TextField(blank=True, null=True)
 
+    class Meta:
+        constraints = [UniqueConstraint(fields=["question", "helper"], name="unique_question_helper")]
+
     def __str__(self):
-        return self.answer[:50]
+        return f"Reply to '{self.question.title}' by '{self.helper.name}'"
 
 
 class Call(models.Model):
