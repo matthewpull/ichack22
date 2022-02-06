@@ -29,7 +29,7 @@ export default function Browse() {
     return (
         <>
             <div className="min-h-full">
-                <Disclosure as="nav" className="bg-gray-800">
+                <Disclosure as="nav" className="bg-primary">
                     {({open}) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ export default function Browse() {
                                         <div className="flex-shrink-0">
                                             <img
                                                 className="h-10 w-auto"
-                                                src="/iamstuck_logo.png"
+                                                src="/iamstuck_logo_white.png"
                                                 alt="Workflow"
                                             />
                                         </div>
@@ -50,8 +50,8 @@ export default function Browse() {
                                                         href={item.href}
                                                         className={classNames(
                                                             item.current
-                                                                ? 'bg-gray-900 text-white'
-                                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                ? 'bg-primary text-background'
+                                                                : 'bg-textlight text-background hover:buttonpress hover:text-background',
                                                             'px-3 py-2 rounded-md text-sm font-medium'
                                                         )}
                                                         aria-current={item.current ? 'page' : undefined}
@@ -136,7 +136,7 @@ export default function Browse() {
                                             as="a"
                                             href={item.href}
                                             className={classNames(
-                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                item.current ? 'bg-gray-900 text-white' : 'bg-textlight hover:bg-gray-700 hover:text-white',
                                                 'block px-3 py-2 rounded-md text-base font-medium'
                                             )}
                                             aria-current={item.current ? 'page' : undefined}
