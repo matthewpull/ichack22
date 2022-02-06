@@ -186,12 +186,10 @@ export default function CallPage() {
                         <h1 className="text-3xl font-bold text-gray-900">Helper Dashboard</h1>
                     </div>
                 </header>
-                <main>
-                    <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
-                        {/* Start replace */}
-                        {App()}
-                        {/* /End replace */}
-                    </div>
+                <main className="flex-1 max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+                    {/* Start replace */}
+                    {App()}
+                    {/* /End replace */}
                 </main>
             </div>
         </>
