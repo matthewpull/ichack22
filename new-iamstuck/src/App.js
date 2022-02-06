@@ -17,7 +17,7 @@ function App() {
       (
         <Auth
           clientID={process.env.REACT_APP_WEBEX_CLIENT_ID}
-          loginText="Login to Webex"
+          loginText="Continue with Webex"
           redirectURI={redirectURI}
           webexAPIBaseURL={process.env.REACT_APP_WEBEX_BASE_URL}
         />
