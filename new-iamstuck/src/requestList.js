@@ -26,7 +26,7 @@ export default function RequestsList(people) {
                         <div className="-mt-px flex divide-x divide-gray-200">
                             <div className="w-0 flex-1 flex">
                                 <a
-                                    href={`mailto:${person.email}`}
+                                    href='/'
                                     className="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
                                 >
                                     <XIcon className="w-5 h-5 text-gray-400" aria-hidden="true"/>
@@ -35,7 +35,7 @@ export default function RequestsList(people) {
                             </div>
                             <div className="-ml-px w-0 flex-1 flex">
                                 <a
-                                    href={`tel:${person.telephone}`}
+                                    href="/call"
                                     className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500"
                                 >
                                     <CheckIcon className="w-5 h-5 text-gray-400" aria-hidden="true"/>

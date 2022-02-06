@@ -51,7 +51,7 @@ const user = {
         'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg'
 }
 const navigation = [
-    {name: 'Home', href: '/', current: false},
+    {name: 'User', href: '/', current: false},
     {name: 'Mentor', href: '/mentor', current: true},
 ]
 const userNavigation = [
@@ -76,9 +76,9 @@ export default function MentorDashboard() {
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                             <img
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                                alt="Workflow"
+                                                className="h-10 w-auto"
+                                                src="/iamstuck_logo.png"
+                                                alt="Logo"
                                             />
                                         </div>
                                         <div className="hidden md:block">
